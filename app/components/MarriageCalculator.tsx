@@ -159,6 +159,18 @@ const MarriageCalculator: React.FC = () => {
           <h2 className="text-xl font-bold">成婚率: {result}%</h2>
         </div>
       )}
+
+      <p></p>
+
+      <p>IBJによる成婚白書2024に基づいて計算しています。</p>
+      <a href="https://prtimes.jp/main/html/rd/p/000000736.000007950.html">https://prtimes.jp/main/html/rd/p/000000736.000007950.html</a>
+
+      <p>ソースコードはこちら</p>
+      <a href="https://github.com/yoshiken/marriage-calculator">https://github.com/yoshiken/marriage-calculator</a>
+
+      <p>このツールについてのお問い合わせは作者Twitter(X)まで</p>
+      <a href="https://x.com/yoshiken_tut">https://x.com/yoshiken_tut</a>
+
     </div>
   );
 };
