@@ -18,31 +18,35 @@ export const calculateMarriageRate = (inputs: UserInputs): number => {
 
   // 学歴スコア
   score = calculateEducationScore(age, gender, inputs.education, score);
-  console.log(age);
-  console.log(gender);
-  console.log(inputs.education);
-  console.log(score);
+  console.log("学歴スコア", score);
 
   // 年収スコア
   score = calculateIncomeScore(age, gender, inputs.income, score);
+  console.log("年収スコア", score);
 
   // 飲酒スコア
   score = calculateDrinkScore(gender, inputs.drinking, score);
+  console.log("飲酒スコア", score);
 
   // 喫煙スコア
   score = calculateSmokeScore(gender, inputs.smoking, score);
+  console.log("喫煙スコア", score);
 
   // 婚姻歴スコア
   score = calculateMarriageHistoryScore(gender, inputs.marriageHistory, score);
+  console.log("婚姻歴スコア", score);
 
   // 子どもの有無スコア
   score = calculateChildrenScore(gender, inputs.children, score);
+  console.log("子どもの有無スコア", score);
 
   // 自分家族との同居希望スコア
   score = calculateLivingTogetherByMyFamliyScore(gender, inputs.LivingTogetherMyFamliy, score);
+  console.log("自分家族との同居希望スコア", score);
 
   // 相手家族との同居希望スコア
   score = calculateLivingTogetherByPartnerFamliyScore(gender, inputs.LivingTogetherPartnerFamliy, score);
+  console.log("相手家族との同居希望スコア", score);
 
 
   // 小数点1桁
@@ -240,20 +244,26 @@ function calculateDrinkScore(gender: string, drinking: string, score: number): n
     switch (drinking) {
       case "飲まない":
         ratio = 74.8;
+        break;
       case "付き合い程度":
         ratio = 98.3;
+        break;
       case "飲む":
         ratio = 123;
+        break;
     }
   }
   if (gender === "female") {
     switch (drinking) {
       case "飲まない":
         ratio = 91.8;
+        break;
       case "付き合い程度":
         ratio = 99.7;
+        break;
       case "飲む":
         ratio = 118.5;
+        break;
     }
   }
 
@@ -267,20 +277,26 @@ function calculateSmokeScore(gender:string, smoking:string, score:number): numbe
     switch (smoking) {
       case "吸わない":
        ratio = 103.5;
+       break;
       case "あまり吸わない":
        ratio = 72;
+       break;
       case "吸う":
        ratio = 67.6;
+       break;
     }
   }
   if (gender === "female") {
     switch (smoking) {
       case "吸わない":
        ratio = 100.4;
+       break;
       case "あまり吸わない":
        ratio = 51.5;
+       break;
       case "吸う":
        ratio = 74.8;
+       break;
     }
   }
   return score * (ratio * 0.01);
@@ -292,22 +308,28 @@ function calculateMarriageHistoryScore(gender:string, marriageHistory:string, sc
   if (gender === "male") {
     switch (marriageHistory) {
       case "初婚":
-        ratio =98;
+        ratio = 98;
+        break;
       case "再婚":
-        ratio =117.1;
+        ratio = 117.1;
+        break;
       case "再々婚以上":
-        ratio =61.5;
+        ratio = 61.5;
+        break;
     }
   }
 
   if (gender === "female") {
     switch (marriageHistory) {
       case "初婚":
-        ratio =99.4;
+        ratio = 99.4;
+        break;
       case "再婚":
-        ratio =107.5;
+        ratio = 107.5;
+        break;
       case "再々婚以上":
-        ratio =73.5;
+        ratio = 73.5;
+        break;
     }
   }
   return score * (ratio * 0.01);
@@ -320,10 +342,13 @@ function calculateChildrenScore(gender:string, children:string, score:number): n
     switch (children) {
       case "あり(同居)":
         ratio = 135.6;
+        break;
       case "あり(別居)":
         ratio = 95.4;
+        break;
       case "なし":
         ratio = 100;
+        break;
     }
   }
 
@@ -331,10 +356,13 @@ function calculateChildrenScore(gender:string, children:string, score:number): n
     switch (children) {
       case "あり(同居)":
         ratio = 89.2;
+        break;
       case "あり(別居)":
         ratio = 48.1;
+        break;
       case "なし":
         ratio = 102.8;
+        break;
     }
   }
 
@@ -348,10 +376,13 @@ function calculateLivingTogetherByMyFamliyScore(gender:string, coResidence:strin
     switch (coResidence) {
       case "希望する":
         ratio = 40.8;
+        break;
       case "希望しない":
         ratio = 107.6;
+        break;
       case "こだわらない":
         ratio = 90.5;
+        break;
     }
   }
 
@@ -359,10 +390,13 @@ function calculateLivingTogetherByMyFamliyScore(gender:string, coResidence:strin
     switch (coResidence) {
       case "希望する":
         ratio = 82.2;
+        break;
       case "希望しない":
         ratio = 101.5;
+        break;
       case "こだわらない":
         ratio = 96.5;
+        break;
     }
   }
 
@@ -376,10 +410,13 @@ function calculateLivingTogetherByPartnerFamliyScore(gender:string, coResidence:
     switch (coResidence) {
       case "構わない":
         ratio = 119.1;
+        break;
       case "難しい":
         ratio = 90;
+        break;
       case "要相談":
         ratio = 107.9;
+        break;
     }
   }
 
@@ -387,10 +424,13 @@ function calculateLivingTogetherByPartnerFamliyScore(gender:string, coResidence:
     switch (coResidence) {
       case "構わない":
         ratio = 110.5;
+        break;
       case "難しい":
         ratio = 99.3;
+        break;
       case "要相談":
         ratio = 100.5;
+        break;
     }
   }
 
