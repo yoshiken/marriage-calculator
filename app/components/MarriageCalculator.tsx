@@ -150,23 +150,32 @@ const MarriageCalculator: React.FC = () => {
 
         {/* ボタン */}
         <button type="submit" className="bg-blue-500 text-white p-2 rounded">
-          成婚率を計算する
+          成婚しやすさを計算する
         </button>
       </form>
 
       {result !== null && (
         <div className="mt-4">
-          <h2 className="text-xl font-bold">成婚率: {result}%</h2>
+          <h2 className="text-xl font-bold">成婚しやすさ: {result}%</h2>
         </div>
       )}
 
-      <p></p>
+      <br />
 
-      <p>IBJによる成婚白書2024に基づいて計算しています。</p>
+      <p>IBJによる成婚白書2023に基づいて計算しています。</p>
       <a href="https://prtimes.jp/main/html/rd/p/000000736.000007950.html">https://prtimes.jp/main/html/rd/p/000000736.000007950.html</a>
+
+      <br />
+
+      <p>成婚しやすさとは</p>
+      <blockquote>活動会員数における各年代の比率を分⺟とし、成婚者における各年代の比率を分子として表したもの（100％が平均）＞成婚白書2023より</blockquote>
+
+      <br />
 
       <p>ソースコードはこちら</p>
       <a href="https://github.com/yoshiken/marriage-calculator">https://github.com/yoshiken/marriage-calculator</a>
+
+      <br />
 
       <p>このツールについてのお問い合わせは作者Twitter(X)まで</p>
       <a href="https://x.com/yoshiken_tut">https://x.com/yoshiken_tut</a>
