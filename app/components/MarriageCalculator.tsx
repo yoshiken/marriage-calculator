@@ -7,10 +7,10 @@ import styles from "@/styles/Home.module.css";
 
 const initialInputs: UserInputs = {
   gender: "male",
-  age: 30,
-  education: "大学",
-  income: 500,
-  drinking: "飲まない",
+  age: 32,
+  education: "大学院",
+  income: 800,
+  drinking: "飲む",
   smoking: "吸わない",
   marriageHistory: "初婚",
   children: "なし",
