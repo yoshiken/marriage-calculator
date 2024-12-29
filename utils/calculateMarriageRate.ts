@@ -7,11 +7,11 @@ export interface UserInputs {
   smoking: string;
   marriageHistory: string;
   children: string;
-  LivingTogetherMyFamliy: string;
-  LivingTogetherPartnerFamliy: string;
+  LivingTogetherMyFamily: string;
+  LivingTogetherPartnerFamily: string;
 }
 
-export const calculateMarriageRate = (inputs: UserInputs): number => {
+export function calculateMarriageRate(inputs: UserInputs): number {
   let score = 100;
   const age = inputs.age;
   const gender = inputs.gender;
@@ -41,11 +41,11 @@ export const calculateMarriageRate = (inputs: UserInputs): number => {
   console.log("子どもの有無スコア", score);
 
   // 自分家族との同居希望スコア
-  score = calculateLivingTogetherByMyFamliyScore(gender, inputs.LivingTogetherMyFamliy, score);
+  score = calculateLivingTogetherByMyFamilyScore(gender, inputs.LivingTogetherMyFamily, score);
   console.log("自分家族との同居希望スコア", score);
 
   // 相手家族との同居希望スコア
-  score = calculateLivingTogetherByPartnerFamliyScore(gender, inputs.LivingTogetherPartnerFamliy, score);
+  score = calculateLivingTogetherByPartnerFamilyScore(gender, inputs.LivingTogetherPartnerFamily, score);
   console.log("相手家族との同居希望スコア", score);
 
 
@@ -369,7 +369,7 @@ function calculateChildrenScore(gender:string, children:string, score:number): n
   return score * (ratio * 0.01);
 }
 
-function calculateLivingTogetherByMyFamliyScore(gender:string, coResidence:string, score:number): number {
+function calculateLivingTogetherByMyFamilyScore(gender:string, coResidence:string, score:number): number {
   let ratio: number = 100;
 
   if (gender === "male") {
@@ -403,7 +403,7 @@ function calculateLivingTogetherByMyFamliyScore(gender:string, coResidence:strin
   return score * (ratio * 0.01);
 }
 
-function calculateLivingTogetherByPartnerFamliyScore(gender:string, coResidence:string, score:number): number {
+function calculateLivingTogetherByPartnerFamilyScore(gender:string, coResidence:string, score:number): number {
   let ratio: number = 100;
 
   if (gender === "male") {
