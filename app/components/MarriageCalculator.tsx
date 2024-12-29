@@ -3,6 +3,7 @@
 
 import React, { useState } from "react";
 import { calculateMarriageRate, UserInputs } from "@/utils/calculateMarriageRate";
+import styles from "@/styles/Home.module.css";
 
 const initialInputs: UserInputs = {
   gender: "male",
@@ -41,7 +42,7 @@ const MarriageCalculator: React.FC = () => {
         {/* 性別 */}
         <div>
           <label className="block font-semibold">性別</label>
-          <select name="gender" value={inputs.gender} onChange={handleChange} className="border p-2 w-full">
+          <select name="gender" value={inputs.gender} onChange={handleChange} className={styles.select}>
             <option value="male">男性</option>
             <option value="female">女性</option>
           </select>
@@ -55,14 +56,14 @@ const MarriageCalculator: React.FC = () => {
             name="age"
             value={inputs.age}
             onChange={handleChange}
-            className="border p-2 w-full"
+            className={styles.select}
           />
         </div>
 
         {/* 学歴 */}
         <div>
           <label className="block font-semibold">学歴</label>
-          <select name="education" value={inputs.education} onChange={handleChange} className="border p-2 w-full">
+          <select name="education" value={inputs.education} onChange={handleChange} className={styles.select}>
             <option value="義務">義務</option>
             <option value="高校">高校</option>
             <option value="専門">専門</option>
@@ -83,7 +84,7 @@ const MarriageCalculator: React.FC = () => {
             name="income"
             value={inputs.income}
             onChange={handleChange}
-            className="border p-2 w-full"
+            className={styles.select}
           />
         </div>
 
@@ -91,7 +92,7 @@ const MarriageCalculator: React.FC = () => {
         {/* 飲酒 */}
         <div>
           <label className="block font-semibold">飲酒</label>
-          <select name="drinking" value={inputs.drinking} onChange={handleChange} className="border p-2 w-full">
+          <select name="drinking" value={inputs.drinking} onChange={handleChange} className={styles.select}>
             <option value="飲まない">飲まない</option>
             <option value="付き合い程度">付き合い程度</option>
             <option value="飲む">飲む</option>
@@ -101,7 +102,7 @@ const MarriageCalculator: React.FC = () => {
         {/* 喫煙 */}
         <div>
           <label className="block font-semibold">喫煙</label>
-          <select name="smoking" value={inputs.smoking} onChange={handleChange} className="border p-2 w-full">
+          <select name="smoking" value={inputs.smoking} onChange={handleChange} className={styles.select}>
             <option value="吸わない">吸わない</option>
             <option value="あまり吸わない">あまり吸わない</option>
             <option value="吸う">吸う</option>
@@ -111,7 +112,7 @@ const MarriageCalculator: React.FC = () => {
         {/* 婚姻歴 */}
         <div>
           <label className="block font-semibold">婚姻歴</label>
-          <select name="marriageHistory" value={inputs.marriageHistory} onChange={handleChange} className="border p-2 w-full">
+          <select name="marriageHistory" value={inputs.marriageHistory} onChange={handleChange} className={styles.select}>
             <option value="初婚">初婚</option>
             <option value="再婚">再婚</option>
             <option value="再々婚以上">再々婚以上</option>
@@ -121,7 +122,7 @@ const MarriageCalculator: React.FC = () => {
         {/* 子どもの有無 */}
         <div>
           <label className="block font-semibold">子どもの有無</label>
-          <select name="children" value={inputs.children} onChange={handleChange} className="border p-2 w-full">
+          <select name="children" value={inputs.children} onChange={handleChange} className={styles.select}>
             <option value="なし">なし</option>
             <option value="あり(同居)">あり(同居)</option>
             <option value="あり(別居)">あり(別居)</option>
@@ -131,7 +132,7 @@ const MarriageCalculator: React.FC = () => {
         {/* 同居希望 */}
         <div>
           <label className="block font-semibold">自分の家族と同居希望</label>
-          <select name="LivingTogetherMyFamliy" value={inputs.LivingTogetherMyFamliy} onChange={handleChange} className="border p-2 w-full">
+          <select name="LivingTogetherMyFamliy" value={inputs.LivingTogetherMyFamliy} onChange={handleChange} className={styles.select}>
             <option value="希望する">希望する</option>
             <option value="希望しない">希望しない</option>
             <option value="こだわらない">こだわらない</option>
@@ -141,7 +142,7 @@ const MarriageCalculator: React.FC = () => {
         {/* 同居希望 */}
         <div>
           <label className="block font-semibold">相手の家族と同居希望</label>
-          <select name="LivingTogetherMyFamliy" value={inputs.LivingTogetherPartnerFamliy} onChange={handleChange} className="border p-2 w-full">
+          <select name="LivingTogetherMyFamliy" value={inputs.LivingTogetherPartnerFamliy} onChange={handleChange} className={styles.select}>
             <option value="構わない">構わない</option>
             <option value="難しい">難しい</option>
             <option value="要相談">要相談</option>
