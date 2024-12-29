@@ -14,8 +14,8 @@ const initialInputs: UserInputs = {
   smoking: "吸わない",
   marriageHistory: "初婚",
   children: "なし",
-  LivingTogetherMyFamily: "こだわらない",
-  LivingTogetherPartnerFamily: "構わない",
+  livingTogetherMyFamily: "こだわらない",
+  livingTogetherPartnerFamily: "構わない",
 };
 
 
@@ -132,7 +132,7 @@ const MarriageCalculator: React.FC = () => {
         {/* 同居希望 */}
         <div>
           <label className="block font-semibold">自分の家族と同居希望</label>
-          <select name="LivingTogetherMyFamliy" value={inputs.LivingTogetherMyFamily} onChange={handleChange} className={styles.select}>
+          <select name="LivingTogetherMyFamliy" value={inputs.livingTogetherMyFamily} onChange={handleChange} className={styles.select}>
             <option value="希望する">希望する</option>
             <option value="希望しない">希望しない</option>
             <option value="こだわらない">こだわらない</option>
@@ -142,7 +142,7 @@ const MarriageCalculator: React.FC = () => {
         {/* 同居希望 */}
         <div>
           <label className="block font-semibold">相手の家族と同居希望</label>
-          <select name="LivingTogetherMyFamliy" value={inputs.LivingTogetherPartnerFamily} onChange={handleChange} className={styles.select}>
+          <select name="LivingTogetherMyFamliy" value={inputs.livingTogetherPartnerFamily} onChange={handleChange} className={styles.select}>
             <option value="構わない">構わない</option>
             <option value="難しい">難しい</option>
             <option value="要相談">要相談</option>

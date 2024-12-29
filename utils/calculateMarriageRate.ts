@@ -7,8 +7,8 @@ export interface UserInputs {
   smoking: string;
   marriageHistory: string;
   children: string;
-  LivingTogetherMyFamily: string;
-  LivingTogetherPartnerFamily: string;
+  livingTogetherMyFamily: string;
+  livingTogetherPartnerFamily: string;
 }
 
 export function calculateMarriageRate(inputs: UserInputs): number {
@@ -41,11 +41,11 @@ export function calculateMarriageRate(inputs: UserInputs): number {
   console.log("子どもの有無スコア", score);
 
   // 自分家族との同居希望スコア
-  score = calculateLivingTogetherByMyFamilyScore(gender, inputs.LivingTogetherMyFamily, score);
+  score = calculateLivingTogetherByMyFamilyScore(gender, inputs.livingTogetherMyFamily, score);
   console.log("自分家族との同居希望スコア", score);
 
   // 相手家族との同居希望スコア
-  score = calculateLivingTogetherByPartnerFamilyScore(gender, inputs.LivingTogetherPartnerFamily, score);
+  score = calculateLivingTogetherByPartnerFamilyScore(gender, inputs.livingTogetherPartnerFamily, score);
   console.log("相手家族との同居希望スコア", score);
 
 
